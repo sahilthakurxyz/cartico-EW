@@ -1,0 +1,239 @@
+.product_container {
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    width: 18vw;
+    height: auto; /* Adjusted to be auto */
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: center;
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    
+    transition: 0.3s;
+    overflow: hidden;
+  }
+  
+  .product_container:hover {
+    box-shadow: -2px -2px 9px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product_container .product {
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Add padding for better spacing */
+  }
+  
+  .image_container {
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
+    overflow: hidden;
+    border-radius: 0px 0px 6px 6px;
+    position: relative;
+    background-color: #eee; /* Set a background color, adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .image_container > .image {
+    max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  }
+  
+  .product_details {
+    top: 1rem;
+   
+    padding: 10px; /* Add padding for better spacing */
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    color: white; /* Set text color to white */
+    border-radius: 0 0 6px 6px; /* Add border radius to match image container */
+  }
+  
+  .product_details .left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product_details .left .name {
+  
+    font-weight: bold; /* Make the name bold */
+  }
+  
+  .product_details .left .price {
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  .product_details .left .price svg {
+    margin-right: 5px; /* Add margin between icon and price */
+  }
+  
+  .product_details .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  
+/*   
+  .product_details .right .ratings {
+    margin-top: 5px; 
+
+    width: 5vw;
+  } */
+  
+  
+  .ratings_star {
+    text-align: center;
+    margin: 10px auto; 
+    padding: 2px;
+    width: 8vw;
+    font-family: 'Roboto', sans-serif;
+    font-size: 5px;
+  }
+  .left .name{
+    font-size: 13px;
+    color: #444;
+  }
+  .left .price{
+    background-color: gray;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    padding: 5px;
+    width: 5vw;
+    font-family: 'Roboto', sans-serif;
+     font-size: 10px;
+  }
+  .left .reviews{
+    display: flex;
+   position: relative;
+   top: 0.3rem;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+
+    color: gray;
+  }
+  .reviews .rev{
+    position: relative;
+    top: 0.5rem;
+    font-size: 10px;
+    color: #111;
+    font-family: 'Roboto', sans-serif;
+
+  }
+  .right .discount{
+    background-color: red;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    padding: 5px;
+    width: 5vw;
+    font-family: 'Roboto', sans-serif;
+     font-size: 10px;
+  }
+/*  */
+@media screen and (max-width:700px) {
+  .product_container {
+    position: relative;
+    top: 1rem;
+    width: 47vw;
+    height: auto; 
+    margin-bottom: 1rem;
+  
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    overflow: hidden;
+  }
+  .product_container:hover {
+    box-shadow: -2px -2px 9px 5px rgba(0, 0, 0, 0.1);
+  }
+  .product_container .product {
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Add padding for better spacing */
+  }
+  .image_container {
+  
+    background-color: #111;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0px 0px 6px 6px;
+    position: relative;
+  }
+  .image_container > .image {
+    
+    object-fit: cover;
+    height: 40vh;
+  }
+  .product_details {
+    top: 1rem;
+   
+    padding: 5px; /* Add padding for better spacing */
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    color: white; /* Set text color to white */
+    border-radius: 0 0 6px 6px; /* Add border radius to match image container */
+  }
+  
+  .product_details .left {
+   display: flex;
+   justify-content: center;
+
+  }
+  .left .reviews{
+ 
+    margin-bottom: 0.4rem;
+   }
+  .left .price{
+      width: 16vw;
+    margin-bottom: 0.1rem;
+      
+  }
+  
+  .left .name{
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 0.1rem;
+
+  }
+ 
+  .product_details .right {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  
+  .ratings_star {
+
+
+    text-align: center;
+    padding: 2px;
+    width: 16vw;
+    
+   
+    font-family: 'Roboto', sans-serif;
+
+  }
+ 
+  
+  .right .discount{
+    background-color: red;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    padding: 5px;
+    width: 10vw;
+    font-family: 'Roboto', sans-serif;
+     font-size: 10px;
+  }
+
+}

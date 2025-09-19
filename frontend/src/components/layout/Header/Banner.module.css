@@ -1,0 +1,107 @@
+.homeHeader{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top:4rem;
+    max-width: 1490px;
+    height: 300px;
+}
+.image{ 
+    width: 100%;
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+    margin-bottom: -300px;
+    mask-image: linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,));
+}
+.image{
+    display: flex;
+     width: 100%;
+      
+    background-size: contain;
+    object-fit:cover;
+}
+
+
+.image .left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    flex: 5%;
+    height: 250px;
+   
+    padding: 15px;
+
+}
+.image .left:hover{
+    cursor: pointer;
+    border: 1px solid gray ;
+    color: #fff;
+    background-color: rgba(0,0,0,0.45) ;
+    border: 3px solid #fff;
+    
+    border-radius: 6px;
+}
+.image .left>svg:hover{
+    background-color: white;
+}
+.image .center{
+    flex: 90%;
+}
+.image .right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    flex: 5%;
+    height: 250px;
+   
+    padding: 15px;
+ 
+   
+}
+.image .right:hover{
+    /* cursor: pointer; */
+    cursor:pointer;
+    border: 1px solid gray ;
+    background-color:rgba(0,0,0,0.45);
+    color: #fff;
+    border-radius: 6px;
+      border: 3px solid #fff;
+}
+.image .right>svg:hover{
+    background-color: white;
+}
+
+
+@media only screen and (max-width:600px){
+    .homeHeader{
+        position: relative;
+        margin-top:-2.3rem ;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 99vw;
+        max-height: 150px;
+    }
+    .image{
+        position: relative;
+        top: -11rem;
+    }
+    .image .left{
+        position: relative;
+        top: 9rem;
+       height: 50px;
+       width: 0;
+    }
+    .image .right{
+        position: relative;
+        top: 9rem;
+       height: 50px;
+       width: 0;
+    }
+}

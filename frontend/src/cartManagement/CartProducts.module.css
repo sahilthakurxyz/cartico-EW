@@ -1,0 +1,222 @@
+
+.item-main-box{
+    /* margin-top: 1vmax; */
+    border-bottom: 1px solid #e3dada;
+    padding: 1vmax;
+    }
+    .item-box{
+    display: grid;
+    grid-template-columns: 1fr 3fr 0.8fr;
+    }
+    .item-box > .image-box  img{
+      width: 15vw;
+      height: 30vh;
+      aspect-ratio: 3/2;
+      object-fit: contain;
+      
+    }
+    .item-box .details-box{
+    
+     margin-left: 0.5vmax;
+  padding: 0;
+  margin-left: 1vmax;
+  height: 100%;
+  width: 100%;
+    }
+
+    .link{
+      text-decoration: none;
+      color: #111;
+    }
+    .item-box .details-box p{
+   
+      font-weight: 500;
+      font-family: 'Rubik', sans-serif;
+      padding: 0;
+      margin: 0;
+      display: block;
+      width: 100%; /* Occupy full width of the container */
+      height: 100%;
+      overflow: hidden;
+      max-height: 3.5vmax;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      font-size: 18px!important;
+      line-height: 24px!important;
+    }
+   
+    .check-stock{
+      font-size: 0.8vmax;
+ font-weight: 500;
+      font-family: 'Rubik', sans-serif;
+      color: green;
+    }
+    .check-notInStock{
+      font-size: 0.8vmax;
+      font-weight: 500;
+           font-family: 'Rubik', sans-serif;
+           color: red;
+    }
+    .item-details .qty{
+      padding: 7px;
+      width: 5vw;
+      font-size: 1vmax;
+      font-weight: 500;
+           font-family: 'Rubik', sans-serif;
+       border: 1px solid gray;
+    }
+ .item-details .quantity input{
+  width: 5vw;
+  height: 4vh;
+  overflow: hidden;
+  border: 1px solid gray;
+  padding: 5px 7px;
+  background-color: #fff;
+
+  margin: 5px;
+  border-radius: 8px;
+ }
+.item-details .quantity button{
+  padding: 10px;
+  background-color: red;
+  border: 2px solid gray;
+  color: #fff;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1vmax;
+  font-weight: 500;
+  font-family: 'Rubik', sans-serif;
+}
+
+ .item-details .delete{
+  margin-top: 10px;
+  background-color: red;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  font-size: 1vmax;
+  cursor: pointer;
+  padding: 5px 7px;
+  font-weight: 500;
+  font-family: 'Rubik', sans-serif;
+ }
+    .item-box .price-box{
+     /* background-color: blue; */
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 18vw;
+      margin-top: 1vmax;
+      
+    }
+   
+    .item-box > .price-box > .offerContainer{
+      width: 18vw;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+     margin-left: 2.3vmax;
+      padding-left: 8px;
+    }
+    .item-box > .price-box > .offerContainer .discount{
+      border: none;
+     height: 4vh;
+     width: 8vw;
+     margin-left: 5vmax;
+      background-color: red;
+      color: #fff;
+      font-size: 0.8vmax;
+     margin-left: 2vmax;
+      font-weight: 500;
+      font-family: 'Roboto', sans-serif;
+    }
+    .item-box > .price-box > .offerContainer .deal-title{
+     margin-right: 3vmax;
+     font-size: 1vmax;
+     width: 14vw;
+     margin-left: 2vmax;
+      font-weight: 500;
+      font-family: 'Roboto', sans-serif;
+      color: purple;
+    }
+    .item-box .price-box .priceContainer{
+     padding: 0;
+      display: flex;
+      align-items: center; 
+      justify-content: flex-end;
+   
+    }
+    .item-box .price-box .priceContainer > svg{
+      font-size: 1vmax;
+      margin-top: -2vmax;
+    }
+    .item-box .price-box .priceContainer > p{
+      font-size: 1.2vmax;
+      font-weight: 500;
+      margin-top: -0.6vmax;
+
+      font-family: 'Rubik', sans-serif;
+    }
+    .m-r-p{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      top: -2vmax;
+      left: 0.3vmax;
+     
+    }
+    .m-r-p > p{
+      position: relative;
+      font-family: 'Rubik', sans-serif;
+      font-size: 0.9vmax;
+      left: -7px;
+      font-weight: 500;
+    }
+    .m-r-p > div{
+      display: flex;
+     
+     
+    }
+    .m-r-p > div > svg{
+      position: relative;
+    
+      top: 1.3vmax;
+    }
+    .m-r-p > div  p{
+      
+      font-size: 1.3vmax;
+      font-weight: 500;
+      color: gray;
+      font-family: 'Rubik', sans-serif;
+    }
+    .m-r-p > div  .line{
+      width: 4vw; /* 5% of the viewport width */
+  height: 1px; /* 1px height */
+  background-color: gray; /* or any color you prefer */
+ position: absolute;
+ top: 2.2vmax;
+
+    }
+    .result-gross-total{
+     margin-top: 5vmax;
+      display: flex;
+      justify-content: flex-end;
+      margin-left: -2vmax;
+      margin-top: -2vmax;
+      font-size: 1.3vmax;
+      align-items: center;
+      font-weight: 500;
+      color: gray;
+      font-family: 'Rubik', sans-serif;
+    }
+    /* .no-products-available{
+      width: 100%;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+    } */

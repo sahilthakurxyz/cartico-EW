@@ -1,0 +1,100 @@
+.product-details-container{
+    display: flex;
+    margin-top: 1rem;
+    /* background-color: black; */
+   box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
+}
+.product-Image{
+    background-color: gray;
+display: flex;
+justify-content: center;
+
+}
+.product-Image > .image{
+        width: 20vw;
+        height: 30vh;
+        object-fit: cover;
+}
+.product-details-info{
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+}
+
+.brand-name{
+    color: #17191c;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+.description{
+    max-height: 4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 20px;
+    color: #0F1111!important;
+    font-weight: 200;
+    font-size: 18px!important;
+    line-height: 24px!important;
+}
+.ratings{
+    margin-top: 10px;
+}
+.product-price{
+    margin-top: 7px;
+    display: flex;
+    margin-left: 8px;
+    padding: 10px;
+    /* box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1); */
+}
+.discount-price{
+    margin-top: 4px;
+    display: flex;
+}
+.discount-price-rupee-sign{
+    margin-top: 1.8vmax;
+    font-size: 10px;
+    font-weight: 200;
+    
+}
+.discount-price-digit{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+}
+.actual-price{
+    position: relative;
+    top: 12px;
+    display: flex;
+    color: gray;
+    margin-left: 10px;
+}
+
+.actual-price-digits{
+position: relative;
+top: -4px;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 400;
+    font-size: 21px;
+}
+.cut-line{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+}
+.discount{
+    position: relative;
+    top: 1.8vmax;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Merriweather Sans', sans-serif;
+    color: red;
+    margin-left: 8px;
+}
