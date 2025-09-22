@@ -3,8 +3,8 @@ import { jwtDecode } from "jwt-decode"; // Correct import statement
 import axios from "axios";
 
 // export const BACKEND_URL = "http://localhost:4001";
-export const BACKEND_URL_PROD = "http://localhost:4001";
-// export const BACKEND_URL_PROD = "https://mernstackecommerce.onrender.com/";
+export const BACKEND_URL_PROD = "https://cartico-ew-api.onrender.com";
+// export const BACKEND_URL_PROD = "http://localhost:4001";
 
 export const axiosInstance = axios.create({
   baseURL: BACKEND_URL_PROD,
