@@ -28,18 +28,16 @@ const Signup = () => {
   });
   const [visible, setVisible] = useState(false);
   const { name, email, password, avatarPreview } = user;
-  const { loading, error, isAuthenticated } = useSelector(
-    (state) => state.user
-  );
+  const { loading, error, auth } = useSelector((state) => state.user);
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(registerClearError());
     }
-    if (isAuthenticated) {
+    if (auth) {
       navigate("/");
     }
-  }, [dispatch, error, alert, navigate, isAuthenticated, loading]);
+  }, [dispatch, error, alert, navigate, auth, loading]);
   const registerDataChange = (e) => {
     if (e.target.name === "avatar") {
       const reader = new FileReader();

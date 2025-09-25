@@ -52,24 +52,11 @@ const Banner = () => {
           }}
         >
           <div className={styles["left"]} onClick={handlePrevImage}>
-            <FaAngleLeft
-              style={{
-                fontSize: 30,
-                color: "#111",
-
-                borderRadius: "3px",
-              }}
-            />
+            <FaAngleLeft />
           </div>
           <div className={styles["center"]}> </div>
           <div className={styles["right"]} onClick={handleNextImage}>
-            <FaAngleRight
-              style={{
-                fontSize: 30,
-                color: "#111",
-                borderRadius: "3px",
-              }}
-            />
+            <FaAngleRight />
           </div>
         </div>
       )}

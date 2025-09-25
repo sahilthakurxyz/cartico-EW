@@ -8,7 +8,7 @@ const { default: mongoose } = require("mongoose");
 const cloudinary = require("cloudinary").v2;
 // GET ALL PRODUCTS
 exports.getProducts = handleAsyncOperation(async (req, res, next) => {
-  let productsPerPage = 15;
+  let productsPerPage = 18;
   // return next(new ErrorHandler("there is an issue", 500));
   const productCount = await Product.countDocuments();
 

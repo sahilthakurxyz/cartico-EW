@@ -75,6 +75,7 @@ export const register = (userData) => async (dispatch) => {
       `/api/ecommerce/v1/register`,
       userData
     );
+
     const token = data?.token;
     localStorage.setItem("token", token);
     localStorage.setItem("auth", data?.auth);

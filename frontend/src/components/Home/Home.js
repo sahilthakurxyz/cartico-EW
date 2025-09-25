@@ -24,7 +24,7 @@ const Home = () => {
   const [filterLaptopProducts, setFilterLaptopProducts] = useState([]);
   const [filterProductCategory, setFilterProductCategory] = useState([]);
   // Accessing the products directly from the Redux store
-  const { loading, products, error } = useSelector((state) => state.products);
+  const { products, error } = useSelector((state) => state.products);
   //  The approach you've presented with two separate useEffect blocks is a valid and clear way to handle the logic based on the presence or absence of an error. It ensures that the getProducts action is dispatched only when there is no error, preventing an infinite loop
   useEffect(() => {
     if (error) {
@@ -43,7 +43,7 @@ const Home = () => {
   );
 
   const highRatingProductsArray = useMemo(
-    () => (products ? products.filter((product) => product.ratings > 3) : []),
+    () => (products ? products.filter((product) => product.ratings >= 3) : []),
     [products]
   );
   const filterLaptopProductsArray = useMemo(
@@ -92,119 +92,115 @@ const Home = () => {
     display: "flex",
     alignItems: "center",
   };
-
+  console.log(filterLaptopProductsArray, "filterLaptopProducts");
   return (
     <div>
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          <MetaData title="Discover Amazing Deals at Your Ultimate Shopping Destination" />
-          <div id={styles?.home_mainContainer}>
-            {/* FIRST PRODUCT CONTAINER */}
-            <ScreenVisual />
-            <div className={styles?.first_product_container}>
-              <div className={styles?.todays_best_deal}>
-                <p>Today's Best Deals Products</p>
-              </div>
-              <div className={styles?.products_container}>
-                <div className={styles?.single_product_container}>
-                  <div className={styles?.heading}>
-                    <p>Save Up to 50%</p>
-                  </div>
-
-                  <div className={styles?.feature_products}>
-                    {discountProducts && discountProducts.length >= 4 ? (
-                      <>
-                        <Product1 product={discountProducts[0]} />
-                        <Product1 product={discountProducts[1]} />
-                        <Product1 product={discountProducts[2]} />
-                        <Product1 product={discountProducts[3]} />
-                      </>
-                    ) : (
-                      <p>No discount products available</p>
-                    )}
-                  </div>
+      <>
+        <MetaData title="Discover Amazing Deals at Your Ultimate Shopping Destination" />
+        <div id={styles?.home_mainContainer}>
+          {/* FIRST PRODUCT CONTAINER */}
+          <ScreenVisual />
+          <div className={styles?.first_product_container}>
+            <div className={styles?.todays_best_deal}>
+              <p>Today's Best Deals Products</p>
+            </div>
+            <div className={styles?.products_container}>
+              <div className={styles?.single_product_container}>
+                <div className={styles?.heading}>
+                  <p>Save Up to 50%</p>
                 </div>
-                <div className={styles?.single_product_container}>
-                  <div className={styles?.heading}>
-                    <p>Top-Rated </p>
-                    <StarRating {...options} />
-                  </div>
-                  <div className={styles?.feature_products}>
-                    {highRatingProducts && highRatingProducts.length >= 4 ? (
-                      <>
-                        <Product2 product={highRatingProducts[0]} />
-                        <Product2 product={highRatingProducts[1]} />
-                        <Product2 product={highRatingProducts[2]} />
-                        <Product2 product={highRatingProducts[3]} />
-                      </>
-                    ) : (
-                      <p>No Products with High Ratings Available</p>
-                    )}
-                  </div>
-                </div>
-                <div className={styles?.single_product_container}>
-                  <div className={styles?.heading}>
-                    <p>Up To 20% to 50% off | For Men </p>
-                  </div>
 
-                  <div className={styles?.feature_products}>
-                    {filterProductCategory.length > 0 &&
-                    filterProductCategory[0].filterProducts.length > 0 ? (
-                      <>
-                        <Product3
-                          product={filterProductCategory[0].filterProducts[0]}
-                        />
-                        <Product3
-                          product={filterProductCategory[1].filterProducts[0]}
-                        />
-                        <Product3
-                          product={filterProductCategory[2].filterProducts[0]}
-                        />
-                        <Product3
-                          product={filterProductCategory[3].filterProducts[0]}
-                        />
-                      </>
-                    ) : (
-                      <p>No Products Available</p>
-                    )}
-                  </div>
-                </div>
-                <div className={styles?.single_product_container}>
-                  <div className={styles?.heading}>
-                    <p>Save 30-50%</p>
-                  </div>
-
-                  {filterLaptopProducts && filterLaptopProducts.length >= 4 ? (
-                    <div className={styles?.feature_products}>
-                      <Product4 product={filterLaptopProducts[0]} />
-                      <Product4 product={filterLaptopProducts[1]} />
-                      <Product4 product={filterLaptopProducts[2]} />
-                      <Product4 product={filterLaptopProducts[3]} />
-                    </div>
+                <div className={styles?.feature_products}>
+                  {discountProducts && discountProducts.length >= 4 ? (
+                    <>
+                      <Product1 product={discountProducts[0]} />
+                      <Product1 product={discountProducts[1]} />
+                      <Product1 product={discountProducts[2]} />
+                      <Product1 product={discountProducts[3]} />
+                    </>
                   ) : (
-                    <p>No Product Available</p>
+                    <p>No discount products available</p>
                   )}
                 </div>
               </div>
-            </div>
-
-            {/* SECOND PRODUCT CONTAINER */}
-            <div className={styles?.second_products_container}>
-              <div className={styles?.shop_all_products}>
-                <p> Shop All Products in One Place</p>
+              <div className={styles?.single_product_container}>
+                <div className={styles?.heading}>
+                  <p>Top-Rated </p>
+                  <StarRating {...options} />
+                </div>
+                <div className={styles?.feature_products}>
+                  {highRatingProducts && highRatingProducts.length >= 4 ? (
+                    <>
+                      <Product2 product={highRatingProducts[0]} />
+                      <Product2 product={highRatingProducts[1]} />
+                      <Product2 product={highRatingProducts[2]} />
+                      <Product2 product={highRatingProducts[3]} />
+                    </>
+                  ) : (
+                    <p>No Products with High Ratings Available</p>
+                  )}
+                </div>
               </div>
-              <div className={styles?.all_products}>
-                {products &&
-                  products?.map((product) => (
-                    <ProductCard key={product._id} product={product} />
-                  ))}
+              <div className={styles?.single_product_container}>
+                <div className={styles?.heading}>
+                  <p>Up To 20% to 50% off | For Men </p>
+                </div>
+
+                <div className={styles?.feature_products}>
+                  {filterProductCategory.length > 0 &&
+                  filterProductCategory[0].filterProducts.length > 0 ? (
+                    <>
+                      <Product3
+                        product={filterProductCategory[0].filterProducts[0]}
+                      />
+                      <Product3
+                        product={filterProductCategory[1].filterProducts[0]}
+                      />
+                      <Product3
+                        product={filterProductCategory[2].filterProducts[0]}
+                      />
+                      <Product3
+                        product={filterProductCategory[3].filterProducts[0]}
+                      />
+                    </>
+                  ) : (
+                    <p>No Products Available</p>
+                  )}
+                </div>
+              </div>
+              <div className={styles?.single_product_container}>
+                <div className={styles?.heading}>
+                  <p>Save 30-50%</p>
+                </div>
+
+                {filterLaptopProducts && filterLaptopProducts.length >= 4 ? (
+                  <div className={styles?.feature_products}>
+                    <Product4 product={filterLaptopProducts[0]} />
+                    <Product4 product={filterLaptopProducts[1]} />
+                    <Product4 product={filterLaptopProducts[2]} />
+                    <Product4 product={filterLaptopProducts[3]} />
+                  </div>
+                ) : (
+                  <p>No Product Available</p>
+                )}
               </div>
             </div>
           </div>
-        </>
-      )}
+
+          {/* SECOND PRODUCT CONTAINER */}
+          <div className={styles?.second_products_container}>
+            <div className={styles?.shop_all_products}>
+              <p> Shop All Products in One Place</p>
+            </div>
+            <div className={styles?.all_products}>
+              {products &&
+                products?.map((product) => (
+                  <ProductCard key={product._id} product={product} />
+                ))}
+            </div>
+          </div>
+        </div>
+      </>
     </div>
   );
 };

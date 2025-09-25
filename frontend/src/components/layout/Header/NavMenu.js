@@ -11,7 +11,6 @@ import { FaProductHunt } from "react-icons/fa6";
 import { TiShoppingCart } from "react-icons/ti";
 import { GoSignIn } from "react-icons/go";
 import { IoIosLogOut } from "react-icons/io";
-import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize";
 
 const NavMenu = () => {
   const [keyword, setKeyword] = useState("");

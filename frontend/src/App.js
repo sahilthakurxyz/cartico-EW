@@ -66,7 +66,7 @@ const Shipping = React.lazy(() => import("./cartManagement/Shipping"));
 const UpdateProduct = React.lazy(() =>
   import("./components/admin/UpdateProduct")
 );
-const Header = React.lazy(() => import("./components/layout/Header/Header"));
+
 const UpdateOrder = React.lazy(() => import("./components/admin/UpdateOrder"));
 const UpdateUser = React.lazy(() => import("./components/admin/UpdateUser"));
 
@@ -274,7 +274,6 @@ const App = () => {
             element={
               <Suspense fallback={<Loading />}>
                 <ProtectedRoute loading={loading} isAuthenticated={auth}>
-                  <Header />
                   <OrderDetails />
                 </ProtectedRoute>
               </Suspense>
@@ -374,7 +373,6 @@ const App = () => {
                       isAdmin={user.role === "admin" ? true : false}
                       adminRoute={true}
                     >
-                      <Header />
                       <NavMenu />
                       <UpdateOrder />
                     </ProtectedRoute>
@@ -436,7 +434,6 @@ const App = () => {
                       isAdmin={user.role === "admin" ? true : false}
                       adminRoute={true}
                     >
-                      <Header />
                       <CreateImages />
                     </ProtectedRoute>
                   </Suspense>

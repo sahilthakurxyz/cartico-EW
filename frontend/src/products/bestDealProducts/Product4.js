@@ -8,11 +8,9 @@ const Product4 = ({ product }) => {
   return (
     <Link to={`/product/${_id}`} style={{ textDecoration: "none" }}>
       <div className={styles?.product_container4}>
-        <img
-          src={images[0].url}
-          alt={name}
-          className={styles?.product_image4}
-        />
+        <div className={styles?.product_image4}>
+          <img src={images[0].url} alt={name} />
+        </div>
         <div className={styles?.product_details4}>
           <p className={styles?.product_name4}>{name}</p>
           <div className={styles?.product_discount4}>{`${discount}% off`}</div>
