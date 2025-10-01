@@ -6,18 +6,23 @@ import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { TiThMenu } from "react-icons/ti";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import UserProfile from "./UserProfile.js";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FaProductHunt } from "react-icons/fa6";
 import { TiShoppingCart } from "react-icons/ti";
 import { GoSignIn } from "react-icons/go";
 import { IoIosLogOut } from "react-icons/io";
+import { logout } from "../../../redux/actions/userAction.js";
+import { useAlert } from "react-alert";
 
 const NavMenu = () => {
   const [keyword, setKeyword] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [toggle, setToggle] = useState(false);
   const { cartItems } = useSelector((state) => state?.cart || []);
+  const { user, loading, auth } = useSelector((state) => state?.user);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const alert = useAlert();
   const handleSubmitSearch = (e) => {
     e.preventDefault();
 
@@ -42,6 +47,19 @@ const NavMenu = () => {
       window.removeEventListener("resize", handleWidth);
     };
   }, []);
+  const handleLogOut = () => {
+    if (!auth) {
+      alert.error("You're not logged In");
+      return;
+    }
+    if (user) {
+      dispatch(logout());
+      alert.success("Logout Successfully");
+    }
+    setTimeout(() => {
+      navigate("/login");
+    }, 1000);
+  };
   return (
     <div>
       <header className={styles["navmenu_container"]}>
@@ -77,9 +95,9 @@ const NavMenu = () => {
                 </Link>
               </div>
               <div onClick={openMobileNavigation}>
-                <Link to="/register">
+                <Link>
                   <GoSignIn />
-                  <p>Sign In</p>
+                  <p onClick={handleLogOut}>Sign In</p>
                 </Link>
               </div>
               <div onClick={openMobileNavigation}>

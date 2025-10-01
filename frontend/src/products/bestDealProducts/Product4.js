@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./Product4.module.css";
 import { Link } from "react-router-dom";
 
-const Product4 = ({ product }) => {
+const  Product4 = ({ product }) => {
   const { _id, name, images, ratings, discount } = product;
   return (
     <Link to={`/product/${_id}`} style={{ textDecoration: "none" }}>

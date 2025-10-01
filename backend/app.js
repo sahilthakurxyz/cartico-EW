@@ -11,7 +11,7 @@ const cors = require("cors");
 const fileUpload = require("express-fileupload");
 // Config
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  const path = require("path");
+  // const path = require("path");
   require("dotenv").config({ path: "backend/config/.env" });
 }
 

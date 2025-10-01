@@ -12,13 +12,7 @@ const ProductCard = ({ product }) => {
       <div className={styles?.product_container} key={_id}>
         <div className={styles?.product}>
           <div className={styles?.image_container}>
-            <img
-              src={image}
-              alt=""
-              key={1}
-              style={{ height: "52vh" }}
-              className={styles?.image}
-            />
+            <img src={image} alt={name} key={1} className={styles?.image} />
           </div>
           <div className={styles?.product_details}>
             <div className={styles?.left}>

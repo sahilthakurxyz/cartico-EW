@@ -72,12 +72,12 @@ const OpenUserProfile = ({ onClose, user, auth }) => {
                 <img
                   src={user?.avatar?.url}
                   onError={(event) => (event.target.src = defaultImg)}
-                  alt=""
+                  alt="avatar"
                 />
               )}
               <div className={styles["user-details"]}>
                 <p>{user && user.name}</p>
-                <p>hello</p>
+
                 <p>{user && user.email}</p>
               </div>
             </div>

@@ -16,6 +16,7 @@ import {
 import MetaData from "../layout/MetaData.js";
 import StarRating from "../../Labels/StarRating.js";
 import ScreenVisual from "../../ScreenVisual.js";
+import ShimmerEffect from "../layout/ShimmerEffect.js";
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const Home = () => {
   const [filterLaptopProducts, setFilterLaptopProducts] = useState([]);
   const [filterProductCategory, setFilterProductCategory] = useState([]);
   // Accessing the products directly from the Redux store
-  const { products, error } = useSelector((state) => state.products);
+  const { products, error, loading } = useSelector((state) => state.products);
   //  The approach you've presented with two separate useEffect blocks is a valid and clear way to handle the logic based on the presence or absence of an error. It ensures that the getProducts action is dispatched only when there is no error, preventing an infinite loop
   useEffect(() => {
     if (error) {
@@ -92,7 +93,7 @@ const Home = () => {
     display: "flex",
     alignItems: "center",
   };
-  console.log(filterLaptopProductsArray, "filterLaptopProducts");
+
   return (
     <div>
       <>
@@ -104,86 +105,127 @@ const Home = () => {
             <div className={styles?.todays_best_deal}>
               <p>Today's Best Deals Products</p>
             </div>
+            {/*  */}
             <div className={styles?.products_container}>
-              <div className={styles?.single_product_container}>
-                <div className={styles?.heading}>
-                  <p>Save Up to 50%</p>
+              {loading ? (
+                <div style={{ marginLeft: "2rem" }}>
+                  <ShimmerEffect
+                    width="22vw"
+                    height="35vw"
+                    borderRadius="10px"
+                  />
                 </div>
-
-                <div className={styles?.feature_products}>
-                  {discountProducts && discountProducts.length >= 4 ? (
-                    <>
-                      <Product1 product={discountProducts[0]} />
-                      <Product1 product={discountProducts[1]} />
-                      <Product1 product={discountProducts[2]} />
-                      <Product1 product={discountProducts[3]} />
-                    </>
-                  ) : (
-                    <p>No discount products available</p>
-                  )}
-                </div>
-              </div>
-              <div className={styles?.single_product_container}>
-                <div className={styles?.heading}>
-                  <p>Top-Rated </p>
-                  <StarRating {...options} />
-                </div>
-                <div className={styles?.feature_products}>
-                  {highRatingProducts && highRatingProducts.length >= 4 ? (
-                    <>
-                      <Product2 product={highRatingProducts[0]} />
-                      <Product2 product={highRatingProducts[1]} />
-                      <Product2 product={highRatingProducts[2]} />
-                      <Product2 product={highRatingProducts[3]} />
-                    </>
-                  ) : (
-                    <p>No Products with High Ratings Available</p>
-                  )}
-                </div>
-              </div>
-              <div className={styles?.single_product_container}>
-                <div className={styles?.heading}>
-                  <p>Up To 20% to 50% off | For Men </p>
-                </div>
-
-                <div className={styles?.feature_products}>
-                  {filterProductCategory.length > 0 &&
-                  filterProductCategory[0].filterProducts.length > 0 ? (
-                    <>
-                      <Product3
-                        product={filterProductCategory[0].filterProducts[0]}
-                      />
-                      <Product3
-                        product={filterProductCategory[1].filterProducts[0]}
-                      />
-                      <Product3
-                        product={filterProductCategory[2].filterProducts[0]}
-                      />
-                      <Product3
-                        product={filterProductCategory[3].filterProducts[0]}
-                      />
-                    </>
-                  ) : (
-                    <p>No Products Available</p>
-                  )}
-                </div>
-              </div>
-              <div className={styles?.single_product_container}>
-                <div className={styles?.heading}>
-                  <p>Save 30-50%</p>
-                </div>
-
-                {filterLaptopProducts && filterLaptopProducts.length >= 4 ? (
-                  <div className={styles?.feature_products}>
-                    <Product4 product={filterLaptopProducts[0]} />
-                    <Product4 product={filterLaptopProducts[1]} />
-                    <Product4 product={filterLaptopProducts[2]} />
-                    <Product4 product={filterLaptopProducts[3]} />
+              ) : (
+                <div className={styles?.single_product_container}>
+                  <div className={styles?.heading}>
+                    <p>Save Up to 50%</p>
                   </div>
-                ) : (
-                  <p>No Product Available</p>
-                )}
-              </div>
+
+                  <div className={styles?.feature_products}>
+                    {discountProducts && discountProducts.length >= 4 ? (
+                      <>
+                        <Product1 product={discountProducts[0]} />
+                        <Product1 product={discountProducts[1]} />
+                        <Product1 product={discountProducts[2]} />
+                        <Product1 product={discountProducts[3]} />
+                      </>
+                    ) : (
+                      <p>No discount products available</p>
+                    )}
+                  </div>
+                </div>
+              )}
+              {loading ? (
+                <div style={{ marginLeft: "2rem" }}>
+                  <ShimmerEffect
+                    width="22vw"
+                    height="35vw"
+                    borderRadius="10px"
+                  />
+                </div>
+              ) : (
+                <div className={styles?.single_product_container}>
+                  <div className={styles?.heading}>
+                    <p>Top-Rated </p>
+                    <StarRating {...options} />
+                  </div>
+                  <div className={styles?.feature_products}>
+                    {highRatingProducts && highRatingProducts.length >= 4 ? (
+                      <>
+                        <Product2 product={highRatingProducts[0]} />
+                        <Product2 product={highRatingProducts[1]} />
+                        <Product2 product={highRatingProducts[2]} />
+                        <Product2 product={highRatingProducts[3]} />
+                      </>
+                    ) : (
+                      <p>No Products with High Ratings Available</p>
+                    )}
+                  </div>
+                </div>
+              )}
+              {loading ? (
+                <div style={{ marginLeft: "2rem" }}>
+                  <ShimmerEffect
+                    width="22vw"
+                    height="35vw"
+                    borderRadius="10px"
+                  />
+                </div>
+              ) : (
+                <div className={styles?.single_product_container}>
+                  <div className={styles?.heading}>
+                    <p>Up To 20% to 50% off | For Men </p>
+                  </div>
+
+                  <div className={styles?.feature_products}>
+                    {filterProductCategory.length > 0 &&
+                    filterProductCategory[0].filterProducts.length > 0 ? (
+                      <>
+                        <Product3
+                          product={filterProductCategory[0].filterProducts[0]}
+                        />
+                        <Product3
+                          product={filterProductCategory[1].filterProducts[0]}
+                        />
+                        <Product3
+                          product={filterProductCategory[2].filterProducts[0]}
+                        />
+                        <Product3
+                          product={filterProductCategory[3].filterProducts[0]}
+                        />
+                      </>
+                    ) : (
+                      <p>No Products Available</p>
+                    )}
+                  </div>
+                </div>
+              )}
+              {loading ? (
+                <div style={{ marginLeft: "2rem" }}>
+                  <ShimmerEffect
+                    width="22vw"
+                    height="35vw"
+                    borderRadius="10px"
+                  />
+                </div>
+              ) : (
+                <div className={styles?.single_product_container}>
+                  <div className={styles?.heading}>
+                    <p>Save 30-50%</p>
+                  </div>
+
+                  {filterLaptopProducts && filterLaptopProducts.length >= 4 ? (
+                    <div className={styles?.feature_products}>
+                      <Product4 product={filterLaptopProducts[0]} />
+                      <Product4 product={filterLaptopProducts[1]} />
+                      <Product4 product={filterLaptopProducts[2]} />
+                      <Product4 product={filterLaptopProducts[3]} />
+                    </div>
+                  ) : (
+                    <p>No Product Available</p>
+                  )}
+                </div>
+              )}
             </div>
           </div>
 
