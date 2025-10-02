@@ -6,7 +6,7 @@ import { getImages } from "../../../redux/actions/imagesAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { getImageClearError } from "../../../redux/reducers/imagesReducer";
-import ShimmerEffect from "../ShimmerEffect";
+
 const Banner = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -44,11 +44,11 @@ const Banner = () => {
       prevIndex === 0 ? images?.length - 1 : prevIndex - 1
     );
   };
-  //
+
   return (
     <div className={styles["homeHeader"]}>
       {loading ? (
-        <ShimmerEffect width="100%" height="380px" borderRadius="8px" />
+        <div className={styles["skeleton-box"]}></div>
       ) : (
         backImages &&
         images?.length > 0 && (

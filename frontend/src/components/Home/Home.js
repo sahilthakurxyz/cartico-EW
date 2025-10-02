@@ -16,7 +16,7 @@ import {
 import MetaData from "../layout/MetaData.js";
 import StarRating from "../../Labels/StarRating.js";
 import ScreenVisual from "../../ScreenVisual.js";
-import ShimmerEffect from "../layout/ShimmerEffect.js";
+
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -108,13 +108,7 @@ const Home = () => {
             {/*  */}
             <div className={styles?.products_container}>
               {loading ? (
-                <div style={{ marginLeft: "2rem" }}>
-                  <ShimmerEffect
-                    width="22vw"
-                    height="35vw"
-                    borderRadius="10px"
-                  />
-                </div>
+                <div className={styles["skeleton-box"]}></div>
               ) : (
                 <div className={styles?.single_product_container}>
                   <div className={styles?.heading}>
@@ -136,13 +130,7 @@ const Home = () => {
                 </div>
               )}
               {loading ? (
-                <div style={{ marginLeft: "2rem" }}>
-                  <ShimmerEffect
-                    width="22vw"
-                    height="35vw"
-                    borderRadius="10px"
-                  />
-                </div>
+                <div className={styles["skeleton-box"]}></div>
               ) : (
                 <div className={styles?.single_product_container}>
                   <div className={styles?.heading}>
@@ -164,13 +152,7 @@ const Home = () => {
                 </div>
               )}
               {loading ? (
-                <div style={{ marginLeft: "2rem" }}>
-                  <ShimmerEffect
-                    width="22vw"
-                    height="35vw"
-                    borderRadius="10px"
-                  />
-                </div>
+                <div className={styles["skeleton-box"]}></div>
               ) : (
                 <div className={styles?.single_product_container}>
                   <div className={styles?.heading}>
@@ -201,13 +183,7 @@ const Home = () => {
                 </div>
               )}
               {loading ? (
-                <div style={{ marginLeft: "2rem" }}>
-                  <ShimmerEffect
-                    width="22vw"
-                    height="35vw"
-                    borderRadius="10px"
-                  />
-                </div>
+                <div className={styles["skeleton-box"]}></div>
               ) : (
                 <div className={styles?.single_product_container}>
                   <div className={styles?.heading}>
