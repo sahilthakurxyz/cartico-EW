@@ -8,10 +8,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaRupeeSign } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import { IoPricetagOutline } from "react-icons/io5";
+import { IoMailOpen, IoPricetagOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { GrSecure } from "react-icons/gr";
+
 import {
   Dialog,
   DialogActions,
@@ -38,8 +39,17 @@ const ProductDetail = () => {
   const { error: reviewError, success } = useSelector(
     (state) => state.newReview
   );
-  const { name, _id, description, price, reviews, ratings, discount, stock } =
-    product;
+  const {
+    name,
+    _id,
+    description,
+    price,
+    reviews,
+    ratings,
+    discount,
+    stock,
+    brand,
+  } = product;
   const className =
     stock > 0 ? styles["product_container"] : styles["product_redColor"];
   const [selectedQuantity, setSelectedQuantity] = useState(1);
@@ -154,7 +164,7 @@ const ProductDetail = () => {
                 <div className={styles?.item_details_container}>
                   <div className={styles["items-details"]}>
                     <div className={styles["title-section-descripton"]}>
-                      <span>Descripton</span> : {description}
+                      <span>Descripton</span> : <p>{description}</p>
                     </div>
                     <div className={styles["product_rating"]}>
                       <StarRating {...options} />
@@ -165,29 +175,43 @@ const ProductDetail = () => {
                   </div>
                   <div className={styles?.special_deals_container}>
                     <div className={styles["special_deal_box"]}>
-                      <div>
-                        <span>Deal of the Day</span>
-                      </div>
-                      {discount > 0 ? (
-                        <div className={styles["price-tag"]}>
-                          <FaRupeeSign /> {price}
-                          <div className={styles["cut-line"]}></div>
+                      <div className={styles["original-price"]}>
+                        <p>Deal of the Day</p>
+                        <div>
+                          {discount > 0 ? (
+                            <div>
+                              <span>
+                                <FaRupeeSign />
+                              </span>
+                              <del>
+                                <p>{price}</p>
+                              </del>
+                            </div>
+                          ) : (
+                            ""
+                          )}
                         </div>
-                      ) : (
-                        ""
-                      )}
+                      </div>
                       <div className={styles["product_price_off"]}>
-                        {discount > 0 ? (
-                          <p
-                            className={styles["discount"]}
-                          >{`${discount} % off `}</p>
-                        ) : (
-                          ""
-                        )}
-                        <p className={styles["product_price"]}>
-                          <FaRupeeSign />
-                          {discountedPrice ? discountedPrice.toFixed(2) : "N/A"}
-                        </p>
+                        <div>
+                          {discount > 0 ? (
+                            <p
+                              className={styles["discount"]}
+                            >{`${discount} % off `}</p>
+                          ) : (
+                            ""
+                          )}
+                        </div>
+                        <div className={styles["product_price"]}>
+                          <span>
+                            <FaRupeeSign />
+                          </span>
+                          <p>
+                            {discountedPrice
+                              ? discountedPrice.toFixed(2)
+                              : "N/A"}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -244,12 +268,17 @@ const ProductDetail = () => {
                 <div className={styles?.product_details_cart_container}>
                   <div className={styles?.cart_product_info}>
                     <p className={styles?.name}>{name}</p>
+                    <p className={styles.brand_name}>{brand}</p>
                     <p className={styles?.product_id}>{id}</p>
                     <div className={styles?.price}>
-                      <FaRupeeSign />
-                      {discountedPrice && selectedQuantity
-                        ? (discountedPrice * selectedQuantity).toFixed(2)
-                        : "N/A"}
+                      <span>
+                        <FaRupeeSign />
+                      </span>
+                      {discountedPrice && selectedQuantity ? (
+                        <p>{(discountedPrice * selectedQuantity).toFixed(2)}</p>
+                      ) : (
+                        "N/A"
+                      )}
                       <span>
                         <IoPricetagOutline />
                       </span>
@@ -258,13 +287,11 @@ const ProductDetail = () => {
                   <div className={styles?.user_address}>
                     <div>
                       <span>
-                        <FaLocationDot
-                          style={{ color: "#310c70", fontSize: "20px" }}
-                        />
+                        <FaLocationDot />
                       </span>
                     </div>
                     <p className={styles?.address}>
-                      delivering the product to you location in 5 days
+                      delivering the product to your location in 5 days
                     </p>
                   </div>
                   {stock > 0 && (
@@ -293,7 +320,6 @@ const ProductDetail = () => {
                   )}
                   <div className={styles["stock-status"]}>
                     <span>Status: </span>
-                    {"  "}
                     {stock > 0 ? (
                       <p className={styles?.inStock}>In Stock</p>
                     ) : (

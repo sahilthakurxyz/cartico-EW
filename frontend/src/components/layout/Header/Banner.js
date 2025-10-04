@@ -48,7 +48,15 @@ const Banner = () => {
   return (
     <div className={styles["homeHeader"]}>
       {loading ? (
-        <div className={styles["skeleton-box"]}></div>
+        <div className={styles["skeleton-box"]}>
+          <p>
+            This site is hosted on a free platform (Render). To optimize
+            resources, the backend may take a few seconds to wake up if it
+            hasn't been accessed for some time. You might see a brief loading
+            screen. Please refresh the page once or twice if needed, and it
+            should work smoothly.
+          </p>
+        </div>
       ) : (
         backImages &&
         images?.length > 0 && (

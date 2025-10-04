@@ -10,9 +10,9 @@
    
 }
   .skeleton-box{
-        height: 320px;
+        height: 300px;
         width: 100%;
-        
+        margin-top: 2rem;
         border-radius: 8px;
          background: linear-gradient(
     90deg,
@@ -20,8 +20,16 @@
     #f0f0f0 50%,
     #e0e0e0 75%
   );
+
+display: flex;
+align-items: center;
+justify-content: center;
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite linear;
+    }
+    .skeleton-box > p{
+ text-align: center;
+ font: 400 16px "Roboto", sans-serif;
     }
       @keyframes shimmer {
   0% { background-position: -200% 0; }

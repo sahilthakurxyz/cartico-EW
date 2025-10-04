@@ -89,7 +89,7 @@ const NavMenu = () => {
                 </Link>
               </div>
               <div onClick={openMobileNavigation}>
-                <Link to="/dashboard">
+                <Link to="/admin/dashboard">
                   <MdOutlineLocalGroceryStore />
                   <p>Dashboard</p>
                 </Link>
