@@ -48,7 +48,7 @@ const CartProducts = ({ item }) => {
               {stock > 0 ? "In Stock" : "Out of Stock"}
             </p>
             <div className={styles["qty"]}>Qty:{quantity}</div>
-            <div>
+            <div className={styles["available-stock"]}>
               <p>Stock Available:{stock} </p>
             </div>
             <div className={styles["quantity"]}>
@@ -67,30 +67,33 @@ const CartProducts = ({ item }) => {
         <div className={styles["price-box"]}>
           {discount > 0 && (
             <div className={styles["offerContainer"]}>
+              <p className={styles["deal-title"]}>Deal of the day</p>
               <button
                 className={styles["discount"]}
               >{`${discount} % off`}</button>
-              <p className={styles["deal-title"]}>Deal of the day</p>
             </div>
           )}
           <div className={styles["priceContainer"]}>
             <FaRupeeSign className={styles["discount-price-rupee-sign"]} />
-
             <p>{price.toFixed(2)}</p>
           </div>
-          <div className={styles["m-r-p"]}>
+          <div className={styles["mrp"]}>
             <p>M.R.P</p>
             <div>
               <FaRupeeSign className={styles["actuall-price-rupee-sign"]} />
               <div>
-                <p>{actualPrice.toFixed(2)}</p>
-                <div className={styles["line"]}></div>
+                <del>
+                  <p>{actualPrice.toFixed(2)}</p>
+                </del>
               </div>
             </div>
           </div>
           <div className={styles["result-gross-total"]}>
-            <p className={styles["total"]}>Total Pay: </p> <FaRupeeSign />
-            <span>{totalPrice.toFixed(2)}</span>
+            <p>Total Pay: </p>
+            <div>
+              <FaRupeeSign />
+              <p>{totalPrice.toFixed(2)}</p>
+            </div>
           </div>
         </div>
       </div>

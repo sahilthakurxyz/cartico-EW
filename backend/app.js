@@ -10,11 +10,10 @@ const compression = require("compression");
 const cors = require("cors");
 const fileUpload = require("express-fileupload");
 // Config
-if (process.env.NODE_ENV !== "PRODUCTION") {
+if (process.env.NODE_ENV !== "production") {
   // const path = require("path");
   require("dotenv").config({ path: "backend/config/.env" });
 }
-
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
@@ -23,8 +22,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
     // origin: ["https://your-personal-shop.vercel.app"],
-    // origin: ["http://localhost:3000"],
-    origin: ["https://cartico-ew-payw.vercel.app"],
+    origin: [process.env.FRONTEND_URL],
+    // origin: ["https://cartico-ew-payw.vercel.app"],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 204,

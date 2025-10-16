@@ -19,7 +19,7 @@ const Profile = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div>
+        <div className={styles["profile"]}>
           {auth && (
             <div>
               <MetaData title={`${user.name}'s Profile`} />
@@ -29,17 +29,20 @@ const Profile = () => {
                 <div className={styles["profile-container-left"]}>
                   <div className={styles["profile-user-info"]}>
                     <p className={styles["left-heading"]}>Profile</p>
-                    <img
-                      src={user?.avatar?.url}
-                      onError={(event) => (event.target.src = defaultImg)}
-                      alt={"profile"}
-                      className={styles["left-user-image"]}
-                    />
-                    <Link to="/update/profile">
-                      <button className={styles["left-user-info-button"]}>
-                        Edit
-                      </button>
-                    </Link>
+                    <div>
+                      <div className={styles["left-user-image"]}>
+                        <img
+                          src={user?.avatar?.url}
+                          onError={(event) => (event.target.src = defaultImg)}
+                          alt={"profile"}
+                        />
+                      </div>
+                      <Link to="/update/profile">
+                        <button className={styles["left-user-info-button"]}>
+                          Edit
+                        </button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
                 <div className={styles["profile-container-right"]}>

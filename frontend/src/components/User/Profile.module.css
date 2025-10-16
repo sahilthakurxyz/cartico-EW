@@ -1,47 +1,49 @@
+.profile{
+width: 100vw;
+height: 100vh;
+}
 .profile-container{
-    margin-top: 7vmax;
-    display: flex;
+  margin-top: 9vmax;    
+    display: grid;
+    grid-template-columns: 40% 60%;
     width: 100%;
-    width: 100vh;
-}
-.profile-container-left{
-    flex: 50%;
-}
+   
+    
+}   
 .profile-user-info{
     display: flex;
-    flex-direction: column;
-    position: relative;
-   
-    left: 6vmax;
-    height: 100%;
-   
+    justify-content: space-around;
 }
 .left-heading{
-    font-size: 30px;
-    font-weight: 500;
-    font-family: 'Rubik', sans-serif;
+   font: 500 30px "Roboto",sans-serif;
 }
 .left-user-image{
     height: 31vh;
     width: 15vw;
-    margin-left: 6vmax;
-    margin-top: -2vmax;
-   
+    background-color: rgb(237, 232, 232);
    border-radius: 50%;
    transition: all 0.5s;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.left-user-image > img{
+    width: 100%;
+    height: 100%;
+      border-radius: 50%;
+    object-fit: cover;
 }
 .left-user-image:hover{
     transform: scale(1.1);
 }
 .profile-user-info .left-user-info-button{
     margin-top: 3vmax;
-    margin-left: 7vmax;
-    width: 60%;
+  
+    width: 100%;
    padding: 8px;
    border-radius: 5px;
   border: none;
    color: #fff;
-
    font-weight: 400;
    font-family: 'Rubik', sans-serif;
  
@@ -56,18 +58,11 @@
 .profile-user-info .left-user-info-button:focus{
     outline: none;
 }
-.profile-container-right{
-    flex: 50%;
-    position: relative;
-    left: 15vmax;
-    top: 3vmax;
-    
-}
 .profile-user-details{
-    padding-left: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    box-sizing: border-box;
 }
 .profile-user-details > div > h4{
    font-size: 18px;
@@ -89,8 +84,9 @@
     margin-top: 2vmax;
     padding: 7px;
     border-radius: 3px;
-    width: 100%;
+    width: 40%;
     background-color: #405166;
+    color: #fff;
     border: none;
 }
 .user-profile-button:hover{
@@ -104,4 +100,37 @@
 }
 .black{
     color: black;
+}
+@media screen and (max-width:700px){
+    .profile{
+width: 100%;
+height: 100%;
+}
+  .profile-container{
+    margin-top: 20vmax;
+    display: flex;
+  flex-direction: column;
+}  
+.left-user-image{
+    height: 20vh;
+    width: 28vw;
+}
+.profile-container-right{
+    display: flex;
+   
+    justify-content: center;
+}
+.profile-user-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.user-profile-button {
+    margin-top: 2vmax;
+    padding: 7px;
+    border-radius: 3px;
+    width: 100%;
+    background-color: #405166;
+    border: none;
+}
 }
