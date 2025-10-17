@@ -22,6 +22,7 @@ const ConfrimOrder = () => {
       shippingCharges,
       tax,
       payTotalAmount,
+      _id: new Date().toString(24).substring(0, 24).split(" ").join("-"),
     };
     sessionStorage.setItem("orderInfo", JSON.stringify(data));
     navigate("/process/payment");
@@ -46,7 +47,7 @@ const ConfrimOrder = () => {
               </div>
               <div>
                 <p>Address:</p>
-                <span className={styles["address"]}>{address}</span>
+                <span>{address}</span>
               </div>
             </div>
           </div>
@@ -56,18 +57,21 @@ const ConfrimOrder = () => {
               {cartItems ? (
                 cartItems.map((item) => (
                   <div key={item.productId}>
-                    <img src={item.image} alt="" />
-                    <Link className={styles["link"]}>
-                      <div>
+                    <div className={styles["image-container"]}>
+                      <img src={item.image} alt={item.name} />
+                    </div>
+
+                    <div className={styles["details"]}>
+                      <Link className={styles["link"]} to="/cart">
                         <MdOutlineDriveFileRenameOutline />
                         <p className={styles["name"]}>{item.name}</p>
-                        <div className={styles["detail"]}>
-                          <p className={styles["quantity"]}>{item.quantity}</p>{" "}
-                          <p> X</p> <p>{item.price.toFixed(1)}</p> ={" "}
-                          <p>{item.totalPrice.toFixed(2)}</p>
-                        </div>
+                      </Link>
+                      <div className={styles["detail"]}>
+                        <p className={styles["quantity"]}>{item.quantity}</p>{" "}
+                        <p> X</p> <p>{item.price.toFixed(1)}</p> ={" "}
+                        <p>{item.totalPrice.toFixed(2)}</p>
                       </div>
-                    </Link>
+                    </div>
                   </div>
                 ))
               ) : (

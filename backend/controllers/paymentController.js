@@ -5,8 +5,20 @@ exports.processPayment = handleAsyncOperation(async (req, res, next) => {
   const myPayment = await stripe.paymentIntents.create({
     amount: req.body.amount,
     currency: "inr",
+    description: req.body?.description,
+    shipping: {
+      name: req.body.address.name,
+      address: {
+        line1: req.body.address.line1,
+        city: req.body.address.city,
+        state: req.body.address.state,
+        postal_code: req.body.address.postal_code,
+        country: req.body.address.country,
+      },
+    },
     metadata: {
-      company: "Ecommerce",
+      company: "Cartico-EW",
+      orderId: req.body.orderId,
     },
   });
   res.status(200).json({

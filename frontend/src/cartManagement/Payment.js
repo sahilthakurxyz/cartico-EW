@@ -31,9 +31,7 @@ const Payment = () => {
   const { cartItems, shippingInfo } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
   const { error } = useSelector((state) => state.newOrder);
-  const paymentData = {
-    amount: Math.round(orderInfo?.payTotalAmount * 100),
-  };
+
   const order = {
     shippingInfo,
     orderItems: cartItems,
@@ -41,6 +39,7 @@ const Payment = () => {
     taxPrice: orderInfo?.tax,
     shippingPrice: orderInfo?.shippingCharges,
     totalPrice: orderInfo?.payTotalAmount,
+    _id: orderInfo?._id,
   };
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -48,9 +47,22 @@ const Payment = () => {
     payBtn.current.disabled = true;
     try {
       attachTokenToRequests();
+
       const { data } = await axiosInstance.post(
         "/api/ecommerce/v1/payment/process",
-        paymentData
+        {
+          amount: Math.round(orderInfo?.payTotalAmount * 100),
+          description: `Order #${orderInfo?._id}-${user?.name}`,
+          orderId: orderInfo?._id,
+          address: {
+            name: user?.name,
+            line1: shippingInfo.address,
+            city: shippingInfo.city,
+            state: shippingInfo.state,
+            postal_code: shippingInfo.pinCode,
+            country: shippingInfo.country,
+          },
+        }
       );
       const client_secret = data?.client_secret;
       if (!stripe || !elements) return;

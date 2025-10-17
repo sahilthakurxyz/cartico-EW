@@ -28,7 +28,6 @@ const Cart = () => {
     }
     navigate("/login", { state: { redirect: "/shipping" } });
   };
-  console.log("hello");
   return (
     <>
       <MetaData title="Cart Products" />

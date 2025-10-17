@@ -54,7 +54,10 @@ const PaymentQuery = () => {
               Contact customer support for any assistance or queries.
             </p>
             <p>
-              <a href="https://docs.stripe.com/testing#regulatory-cards">
+              <a
+                href="https://docs.stripe.com/testing#regulatory-cards"
+                target="_blank"
+              >
                 This Link for Payment details
               </a>
             </p>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./ProductDetail.module.css";
 import ProductReviews from "./ProductReviews.js";
 import Loader from "../../components/layout/Loader.js";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -58,6 +58,7 @@ const ProductDetail = () => {
   const [reviewRating, setReviewRating] = useState(0);
   const [reviewContent, setReviewContent] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { id } = useParams();
   const alert = useAlert();
   const onSubmitHandler = () => {
@@ -100,6 +101,7 @@ const ProductDetail = () => {
 
     dispatch(addItemsCart(id, selectedQuantity));
     alert.success("add Items to cart");
+    navigate("/cart");
   };
   const handleByNow = () => {
     if (stock < 1) {
@@ -107,6 +109,7 @@ const ProductDetail = () => {
       return;
     }
     alert.error("This Option is Not Available for Now");
+    // navigate("/cart");
   };
   const settings = {
     dots: true,
