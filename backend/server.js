@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 const connectDB = require("./config/database.js");
 const cloudinary = require("cloudinary");
 const app = require("./app.js");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4001;
 
 // Uncaught Error exception
 process.on("uncaughtException", (err) => {
@@ -18,8 +18,8 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
-const server = app.listen(port, () => {
-  console.log(`server running on http://localhost:${port} port`);
+const server = app.listen(port, "0.0.0.0", () => {
+  console.log(`server running on Port :${port}`);
 });
 
 // unhandled Promise Rejecton
