@@ -1,0 +1,14 @@
+.no-product-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #111;
+    font-size: 16px;
+    font-weight: 600;
+   font-family: 'Merriweather Sans', sans-serif;
+}
+.no-product-message > span{
+    color: red;
+    margin-left: 12px;
+    margin-right: 12px;
+}

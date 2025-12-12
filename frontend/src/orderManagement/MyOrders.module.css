@@ -1,0 +1,106 @@
+.myOrder-main {
+  padding: 10px;
+  width: 90vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.myOrders-page {
+  background-color: white;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+/* DataGrid container for scroll on small devices */
+.dataGridWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-grid-main-container {
+  background-color: #444;
+  color: #fff;
+  font: 400 1rem "Rubik";
+  border-radius: 8px;
+}
+
+.data-grid-main-container div {
+  color: #fff;
+  font: 400 0.95rem "Rubik";
+}
+
+.data-grid-main-container a {
+  color: rgba(0, 0, 0, 0.7);
+  transition: all 0.4s;
+  font-size: 20px;
+}
+
+.data-grid-main-container a:hover {
+  background-color: #fff;
+  color: red;
+  border-radius: 8px;
+}
+
+.heading-owner {
+  text-align: center;
+  font: 400 1.1rem "Roboto";
+  padding: 0.6rem;
+  color: #fff;
+  background-color: rgb(44, 44, 44);
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.greenColor {
+  color: green !important;
+}
+
+.redColor {
+  color: red !important;
+}
+
+/* ✅ RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .myOrder-main {
+    width: 95vw;
+    padding: 5px;
+  }
+
+  .data-grid-main-container div {
+    font-size: 0.8rem;
+  }
+
+  .data-grid-main-container a {
+    font-size: 18px;
+  }
+
+  .heading-owner {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .data-grid-main-container div {
+    font-size: 0.7rem;
+  }
+
+  .data-grid-main-container a {
+    font-size: 16px;
+  }
+
+  .myOrder-main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .dataGridWrapper {
+    overflow-x: scroll;
+  }
+
+  .heading-owner {
+    font-size: 0.8rem;
+  }
+}

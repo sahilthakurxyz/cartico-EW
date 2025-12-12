@@ -1,0 +1,86 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+    z-index: 500;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background-color: #040f13; /* Dark background color */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .loading_text{
+    position: relative;
+    top: 1rem;
+   font-family: 'Roboto', sans-serif;
+
+  }
+  .spinner {
+    width: 10vw;
+    height: 10vw; /* Adjusted to make it a circle */
+    border-radius: 50%;
+    border: 2px solid transparent; /* Added border to create the circle */
+    border-top-color: #1d1a85; 
+    border-bottom-color: #0d0b39;
+     
+    /* box-shadow: 0 0 10px #bfbeec; Add a subtle glow effect */
+    animation: rotating 2000ms linear infinite, colorFlip 2000ms linear infinite; /* Add colorFlip animation */
+  }
+  
+  @keyframes rotating {
+    0%,40%{
+      transform: rotateZ(-160deg);
+
+    }
+    10%,30%{
+      transform: rotateZ(160deg)
+    }
+    100% {
+      transform: rotateZ(360deg);
+    }
+
+  }
+  
+  @keyframes colorlip {
+    0%, 25% {
+      border-top-color: #2a25be;
+    }
+    25.1%, 50% {
+      border-top-color: #e74c3c;
+    }
+    50.1%, 75% {
+      border-top-color: #721667;
+    }
+    75.1%, 100% {
+      border-top-color: #3498db;
+    }
+  }
+
+  .small-button-loader{
+
+    height: 4vh;
+        width: 2vw;
+        border-radius: 50%;
+       
+        animation: spin 500ms linear infinite;
+  }
+  @keyframes spin {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+
+@media screen and (max-width:700px){
+  .skeleton-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}

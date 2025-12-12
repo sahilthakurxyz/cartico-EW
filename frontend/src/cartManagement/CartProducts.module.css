@@ -1,0 +1,266 @@
+
+.item-main-box{
+    /* margin-top: 1vmax; */
+    border-bottom: 1px solid #e3dada;
+    padding: 1vmax;
+   
+    }
+    .item-box{
+    display: grid;
+    grid-template-columns: 1fr 3fr 0.8fr;
+  
+    }
+    .item-box .image-box{
+      width: 15vw;
+      height: 30vh;
+     overflow: hidden;
+    }
+ .item-box .image-box  img{
+  width: 100%;
+  height: 100%;
+object-fit: cover;
+ }
+    .item-box .details-box{
+    
+     margin-left: 0.5vmax;
+  padding: 0;
+  margin-left: 1vmax;
+  height: 100%;
+  width: 100%;
+    }
+
+    .link{
+      text-decoration: none;
+      color: #111;
+    }
+ .details-box a p{
+  font: 400 15px "Roboto",sans-serif;
+ display: -webkit-box;
+ -webkit-line-clamp: 3;
+ -webkit-box-orient: vertical;
+ text-overflow: ellipsis;
+ overflow: hidden;
+    }
+   
+    .check-stock{
+    font: 500 15px "Roboto",sans-serif;
+      color: green;
+    }
+    .check-notInStock{
+    font: 500 15px "Roboto",sans-serif;
+           color: red;
+    }
+    .item-details .qty{
+      padding: 7px;
+      width: 5vw;
+      font: 500 1vmax 'Rubik', sans-serif;
+       border: 1px solid gray;
+    }
+ .item-details .quantity input{
+  width: 5vw;
+  height: 4vh;
+  overflow: hidden;
+  border: 1px solid gray;
+  padding: 5px 7px;
+  border-radius: 8px;
+ }
+ .available-stock p{
+  font: 500 1vmax 'Rubik', sans-serif;
+ }
+.item-details .quantity button{
+  margin-left: 12px;
+  padding: 10px;
+  background-color: rgba(0, 0, 235, 0.901);
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 7px;
+  cursor: pointer;
+ font: 500 14px 'Rubik', sans-serif;
+}
+
+ .item-details .delete{
+  margin-top: 10px;
+  background-color: red;
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  padding: 7px 7px;
+  font-weight: 500;
+  font: 500 12px 'Rubik', sans-serif;
+ }
+    .item-box .price-box{
+     /* background-color: blue; */
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-left: 1vmax;
+      box-sizing: border-box;
+    }
+   .offerContainer .deal-title{
+    color: purple;
+    font: 400 14px "Roboto",sans-serif;
+   }
+   .offerContainer .discount{
+    background-color: red;
+    border: none;
+    outline: none;
+    font: 400 14px "Roboto",sans-serif;
+    padding: 6px 13px;
+    border-radius: 7px;
+    color: #fff;
+   }
+ 
+    .item-box .price-box .priceContainer{
+     padding: 0;
+      display: flex;
+      align-items: center; 
+      justify-content: center;
+   
+    }
+    .priceContainer > svg{
+    font-size: 12px;
+    }
+   .priceContainer > p{
+      font: 400 17px 'Rubik', sans-serif;
+    }
+    .mrp{
+      
+      align-items: center;
+      display: flex;
+    }
+    .mrp div{
+      margin-left: 8px;
+      display: flex;
+      align-items: center;
+      
+    }
+     .mrp > p{
+       font: 400 14px "Roboto",sans-serif;
+      font-size: 13px;
+     }
+     .mrp div svg{
+      font-size: 12px;
+     }
+   
+     .mrp div > div p{
+      font: 400 17px 'Rubik', sans-serif;
+     }
+  
+  .result-gross-total{
+    display: flex;
+    align-items: center;
+  }
+    .result-gross-total > p{
+      font: 400 14px "Roboto",sans-serif;
+    }
+     .result-gross-total div{
+        display: flex;
+    align-items: center;
+     margin-left: 8px;
+  }
+      .result-gross-total div svg{
+      font-size: 12px;
+     }
+     .result-gross-total div p{
+      font: 400 17px 'Rubik', sans-serif;
+     }
+ 
+    @media screen and (max-width:700px){
+          .item-box{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1.5fr;
+    }
+       .item-box .image-box{
+      width: 100%;
+      height: 30vh;
+     overflow: hidden;
+    }
+
+    .item-box .details-box{
+   
+  padding: 0px 4px;
+  margin-left: 0;
+    }
+
+
+.details-box a p{
+  font: 400 12px "Roboto",sans-serif;
+ display: -webkit-box;
+ -webkit-line-clamp: 3;
+ -webkit-box-orient: vertical;
+ text-overflow: ellipsis;
+ overflow: hidden;
+    }
+   
+    .check-stock{
+    font: 500 12px "Roboto",sans-serif;
+      color: green;
+    }
+    .check-notInStock{
+    font: 500 12px "Roboto",sans-serif;
+           color: red;
+    }
+  .item-details .qty{
+      padding: 7px;
+      width: 10vw;
+      font: 500 2vmax 'Rubik', sans-serif;
+       border: 1px solid gray;
+    }
+ .item-details .quantity input{
+  width: 8vw;
+  height: 4vh;
+  overflow: hidden;
+  border: 1px solid gray;
+  padding: 5px 7px;
+  border-radius: 8px;
+ }
+ .available-stock p{
+  font: 500 2vmax 'Rubik', sans-serif;
+ }
+.item-details .quantity button{
+  margin-left: 12px;
+  padding: 10px;
+  background-color: rgba(0, 0, 235, 0.901);
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 7px;
+  cursor: pointer;
+ font: 500 12px 'Rubik', sans-serif;
+}
+
+ .item-details .delete{
+  margin-top: 10px;
+  background-color: red;
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  padding: 7px 7px;
+  font-weight: 500;
+  font: 500 12px 'Rubik', sans-serif;
+ }
+    .item-box .price-box{
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1vmax;
+      
+    }
+    .item-details .quantity{
+      display: flex;
+      flex-direction: column;
+    }
+   .item-details .quantity button{
+    margin-top: 8px;
+  margin-left: 1px;
+  padding: 10px;
+  width: 18vw;
+}
+ 
+    }

@@ -1,0 +1,36 @@
+.collapse .menu{
+    position: absolute;
+    z-index: 100;
+    top: 6%;
+    left: 5%;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+ 
+}
+
+.collapse .navMenu-items{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #fff;
+    z-index: 99;
+}
+.navMenu-items{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navMenu-items > div{
+    width: 25%;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+}

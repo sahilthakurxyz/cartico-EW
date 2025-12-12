@@ -1,0 +1,39 @@
+.sidebar-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-right: 2px solid black;
+   
+    height: 70vh;
+    padding: 5px 1vmax;
+}
+.sidebar-logo{
+    position: relative;
+    top: -1vmax;
+}
+.sidebar-logo > svg{
+ font-size: 30px;
+}
+.sidebar-logo > p{
+    font: 700 1vmax "Roboto";
+}
+.sidebar-main a{
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.sidebar-main > a > div > p{
+    color: green;
+    font: 400 1vmax "Rubik";
+}
+.sidebar-main a > div{
+    display: flex;
+    align-items: center;
+}
+.sidebar-main a > div > svg{
+    margin-right: 0.5vmax;
+}
+.tree-items{
+    color: gray;
+    background-color: #fff;
+    font: 400 0.5vmax "Rubik";
+}

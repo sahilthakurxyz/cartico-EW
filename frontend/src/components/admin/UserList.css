@@ -1,0 +1,64 @@
+.productList-main{ 
+    margin-top: 8vmax;
+   width: 98vw;
+  
+   display: grid;
+   grid-template-columns: 1fr 5fr;
+}
+.productList-main > div > p{
+   
+   width: 40%;
+   margin: 0.4vmax auto;
+   font: 500 2vmax "Rubik";
+}
+.productList-data-container{
+padding: 1vmax 2vmax;
+}
+.productListTable .MuiDataGrid-columnHeaders{
+   background-color: #c41a52;
+   color: #fff;
+   font: 500 1.2vmax "Roboto";
+}
+.deleteLoading{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+   z-index: 500;
+   background-color: #0c0d0d;
+}
+.deleteLoading > div{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 5px 2vmax;
+  width: 30vw;
+  height: 20vh;
+  background-color: #fff;
+  border-radius: 8px; 
+}
+.deleteLoading > div > p{
+   font: 500 1.4vmax "Rubik";
+   color: #1611a8;
+}
+.deleteLoading > div > p > span{
+   color: #0c0d0d;
+}
+.greenColor{
+   color: green;
+}
+.redColor{
+   color: red;
+}
+.empty-bucket > div{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+.empty-bucket > div > svg{
+ font-size: 3rem;
+}
+.empty-bucket > div > p{
+   font: 500 2vmax "Roboto";
+}

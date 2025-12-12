@@ -1,0 +1,118 @@
+.products-main-container {
+    position: relative;
+    top: 5rem;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    margin: 1vmin auto;
+}
+
+.product-details-container {
+    display: flex;
+}
+
+.products-left-conatainer {
+    width: 25vw;
+    height: 100vh;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 2rem;
+}
+.heading-filter{
+
+    font-size: 25px;
+   font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 500;
+}
+.filter-container{
+    width: 90%;
+}
+.category-container{
+    font-size: 15px;
+    font-weight: 500;
+   font-family: 'Merriweather Sans', sans-serif;
+   color: rgba(0,0,0,0.61);
+   margin: 0.4vmax;
+   transition: all 0.5s;
+}
+.category-link{
+    list-style: none;
+}
+.category-link:hover{
+    color: red;
+}
+.products-center-container {
+    
+    flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.result-heading{
+   margin: 1.6rem 0rem 1.3rem 2rem;
+   font-size: 25px;
+   font-family: 'Merriweather Sans', sans-serif;
+   font-weight: 300;
+}
+
+.products-details-search-result{
+    
+    width: 93%;
+    flex-flow: 1;
+    margin: 1vmax auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.pagination-container{
+    display: flex;
+    justify-content: center;
+    margin: 5vmax;
+}
+.pagination-container > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.page_item{
+  list-style: none;
+cursor: pointer;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1vmax 1.5vmax;
+   transition: 0.3s all;
+   
+}
+.page_item:first-child{
+    border-radius: 5px 0 0 5px;
+}
+.page_item:last-child{
+    border-radius: 0 5px 5px 0;
+}
+.page_item:hover{
+    background-color: rgb(230, 230, 230);
+}
+.page_link{
+    color: gray;
+}
+.page_item:hover .page_link{
+    color: #100b30;
+}
+.page_link{
+ text-decoration: none;
+ transition: 0.3s all;
+ font-family: 'Roboto', sans-serif;
+}
+
+.pageItemActive{
+    background-color: #05090f;
+   
+}
+.pageLinkActive{
+    color: #fff;
+}
+.products-right-container {
+    width: 18vw;
+    height: 100vh;
+    background-color: green;
+}

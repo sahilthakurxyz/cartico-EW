@@ -1,0 +1,235 @@
+.orderDetails-order-container{
+    height: 100vh;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 6fr 3fr;  
+    box-sizing: border-box;
+}
+
+.orderDetails-shipping-area{
+    padding: 2vmax 5vmax;
+    padding-bottom: 0%;
+}
+.orderDetails-shipping-area > p{
+    padding: 0.6vmax 0;
+    border-bottom: 1px solid #bec5cf;
+    width: 20%;
+    text-align: center;
+    font: 400 1.2vmax "Rubik";
+}
+.orderDetails-shipping-area-box > div{
+    display: flex;
+    align-items: center;
+    margin: 1vmax 0;
+}
+.orderDetails-shipping-area-box > div > p{
+    font-size: 1vmax;
+    font-weight: 500;
+    font-family:"Roboto",sans-serif;
+    margin-left: 1vmax;
+}
+
+.confrim-cartItems-container{
+    box-sizing: border-box;
+    padding: 0 5vmax;
+}
+.orderDetails-cartItems-box > div{
+    box-sizing: border-box;
+    margin-top: 3vmax;
+    padding: 1vmax 0px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #474747;
+}
+.image-container{
+   width: 17vw;
+    height: 27vh;
+}
+.image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.details{
+    display: flex;
+    align-items: center;
+    margin-left: 4vmax;
+}
+.details a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #000;
+    font: 400 1.1vmax "Rubik",sans-serif;
+} 
+ .detail{
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   }
+   .detail > div{
+    display: flex;
+    align-items: center;
+    color: #000;
+    gap: 10px;
+    font: 400 1.2vmax "Rubik",sans-serif;
+   }
+.detail > p{
+     color: #000;
+    gap: 10px;
+    font: 400 1.2vmax "Rubik",sans-serif;
+}
+  .orderSummary > p {
+    text-align: center;
+    font: 400 1.3vmax "Rubik";
+    border-bottom: 1px solid rgba(0, 0, 0, 0.267);
+    padding: 1vmax;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+   
+  }
+
+  .orderSummary > div  {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .orderSummary > div > p{
+    font: 400 1.4vmax "Rubik";
+    color: green;
+    
+  }
+
+  @media screen and (max-width:600px){
+  .orderDetails-order-container{
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.orderDetails-shipping-area{
+    padding: 2vmax 5vmax;
+    padding-bottom: 0%;
+    
+}
+.orderDetails-shipping-area > p{
+  
+    width: 30%;
+  
+    font: 400 2.2vmax "Rubik";
+}
+.orderDetails-shipping-area-box > div > p{
+    font-size: 2.2vmax;
+    margin-left: 1vmax;
+}
+.confrim-cartItems-container{
+    box-sizing: border-box;
+    padding: 0px 1vmax;
+     
+}
+.orderDetails-cartItems-box > div{
+  display: flex;
+ flex-direction: column;
+ margin-top: 1vmax;
+
+}
+.image-container{
+   width: 36vw;
+    height: 30vh;
+ 
+}
+.image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    margin-left: 4vmax;
+}
+.details a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #000;
+    font: 400 2vmax "Rubik",sans-serif;
+} 
+ .detail{
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   }
+   .detail > div{
+    display: flex;
+    align-items: center;
+    color: #000;
+    gap: 10px;
+    font: 400 2.1vmax "Rubik",sans-serif;
+   }
+.detail > p{
+     color: #000;
+    gap: 10px;
+    font: 400 2vmax "Rubik",sans-serif;
+}
+
+.orderSummary {
+    padding: 1vmax 1vmax;
+    box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.267);
+    transition: 0.5s;
+   
+  }
+
+  .orderSummary > p {
+   
+    font: 400 2.5vmax "Rubik";   
+  }
+
+  .orderSummary > div > div {
+
+    font-size: 2.2vmax;
+    padding: 0 1vmax;
+   
+    margin: 2vmax 0;
+  
+  }
+  .orderSummary > div > div > span {
+    color: rgba(0, 0, 0, 0.692);
+   
+    font: 500 2.2vmax "Rubik",sans-serif;
+  }
+  .orderSummaryTotal {
+
+    font:500 2.3vmax "Rubik",sans-serif;
+  
+    padding: 0vmax 1vmax;
+
+  
+  }
+  .orderSummary > button {
+    padding: 2vmax 0;
+
+    font: 400 2.3vmax "Rubik",sans-serif;
+  }
+    .orderSummary > div > p{
+    font: 400 2.1vmax "Rubik";
+    color: green;
+    
+  }
+
+  }
+.greenColor{
+    color: green;
+}
+.redColor{
+    color: red;
+}
+
+

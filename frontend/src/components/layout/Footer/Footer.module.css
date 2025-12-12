@@ -1,0 +1,137 @@
+.nav_footer_main{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 7px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  margin-top: 2vmax;
+  background-color: #fff; 
+ box-sizing: border-box;
+  height: auto;
+  overflow: hidden;
+
+  border-radius: 2px;
+}
+.backtoTop{
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 0;
+padding: 10px;
+box-sizing: border-box;
+background-color: #232F3E;
+cursor: pointer;
+color: #fff;
+}
+.backtoTop p,
+ .backtoTop span{
+  padding: 0;
+  margin: 0;
+}
+
+
+#nav_footer_contactPage{
+  background-color: #232F3E;
+  width: 100%;
+
+  color: white;
+  display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+
+ box-sizing: border-box;
+ padding: 20px 0;
+}
+
+
+ .footer_aboutSection{
+
+  width: 100%;
+
+
+}
+.footer_aboutSection_marginTop{
+  /* align-items: center; */
+  display: flex;
+  /* justify-content: center; */
+  justify-content: space-evenly;
+}
+ .footer_sameClass{
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+#nav_footer_contactPage .footer_totalCountry_bussiness{
+  border-top: 0.1px solid #5f5c5c;
+  width: 95%;
+}
+.footer_totalCountry_bussiness .footer_totalCountry_marginTop{
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer_totalCountry_marginTop div > span{
+
+  font: 500 1.2rem "Roboto", sans-serif;
+}
+.footer_totalCountry_marginTop div > p{
+
+  font: 500 15px "Roboto", sans-serif;
+}
+.nav_footer_main #nav_footer_copyRights{
+  width: 100%;
+  /* margin-top: -10px; */
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#fff ;
+  color: #111;
+  font: 500 14px "Roboto", sans-serif;
+}
+.nav_footer_main #nav_footer_copyRights .footer_copyRights_marginTop{
+ padding: 10px 0;
+}
+.footer_knowAbout,
+.footer_socialUrl,
+.footer_letUsHelp,
+.footer_comingPage, .footer_customerService {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.footer_aboutSection_marginTop > div > a{
+text-decoration: none;
+color: #fff;
+font: 500 14px "Roboto", sans-serif;
+margin-top: 4px;
+
+}
+.footer_aboutSection_marginTop > div > a:hover{
+  color: rgb(234, 119, 119); 
+}
+@media screen and (max-width:700px){
+.footer_aboutSection_marginTop{
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer_aboutSection_marginTop > div{
+width: 100px;
+}
+.footer_sameClass{
+  font-size: 15px;
+}
+.footer_aboutSection_marginTop > div a{
+  font-size: 13px;
+}
+.footer_totalCountry_marginTop div > p{
+  text-align: center;
+}
+}
