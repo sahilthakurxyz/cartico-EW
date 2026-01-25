@@ -5,7 +5,8 @@ import axios from "axios";
 // export const BACKEND_URL = "http://localhost:4001";
 // export const BACKEND_URL_PROD = "https://cartico-ew-api.onrender.com";
 // New Backend Url
-export const BACKEND_URL_PROD = "https://web-production-bf8eb.up.railway.app";
+// export const BACKEND_URL_PROD = "https://web-production-bf8eb.up.railway.app";
+export const BACKEND_URL_PROD = "http://56.228.41.226:4001";
 // export const BACKEND_URL_PROD = "http://localhost:4001";
 // export const BACKEND_URL_PROD = "https://web-production-302e6.up.railway.app";
 
@@ -28,7 +29,7 @@ axiosInstance.interceptors.request.use(
     attachTokenToRequests();
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 // Custom Hook (optional) for easier integration into components
@@ -60,9 +61,8 @@ export const handleTokenRefresh = async () => {
   if (isTokenExpired()) {
     try {
       const newToken = await refreshToken();
-      axiosInstance.defaults.headers.common[
-        "Authorization"
-      ] = `Bearer ${newToken}`;
+      axiosInstance.defaults.headers.common["Authorization"] =
+        `Bearer ${newToken}`;
     } catch (error) {
       console.error("Token refresh failed:", error);
       // Handle token refresh failure, e.g., redirect to login page
