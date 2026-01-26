@@ -6,7 +6,9 @@ import axios from "axios";
 // export const BACKEND_URL_PROD = "https://cartico-ew-api.onrender.com";
 // New Backend Url
 // export const BACKEND_URL_PROD = "https://web-production-bf8eb.up.railway.app";
-export const BACKEND_URL_PROD = "http://56.228.41.226:4001";
+// export const BACKEND_URL_PROD = "http://56.228.41.226:4001";
+export const BACKEND_URL_PROD =
+  "https://myth-predict-continued-recordings.trycloudflare.com";
 // export const BACKEND_URL_PROD = "http://localhost:4001";
 // export const BACKEND_URL_PROD = "https://web-production-302e6.up.railway.app";
 
